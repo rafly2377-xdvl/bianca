@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun Bianca Esarraya ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                linear-gradient(rgba(255, 105, 150, 0.45), rgba(80, 20, 70, 0.75)),
+                url("bianca2.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: -1;
+        }
+
+        /* LAYAR PEMBUKA */
+        #opening {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+
+            background:
+                linear-gradient(rgba(60, 10, 50, 0.75), rgba(20, 5, 25, 0.9)),
+                url("bianca2.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .opening-box {
+            width: 90%;
+            max-width: 500px;
+            padding: 40px 25px;
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+
+        .opening-box h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .opening-box p {
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        #enterButton {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #e91e63;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        #enterButton:hover {
+            transform: scale(1.08);
+            background: #ffe0eb;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            padding: 35px 25px;
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+
+            box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+
+            animation: muncul 1.5s ease;
+        }
+
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .judul {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+        }
+
+        .subjudul {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .foto {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+
+            box-shadow:
+                0 0 20px rgba(255,255,255,0.7),
+                0 0 50px rgba(255,80,150,0.8);
+
+            animation: fotoAnimasi 3s infinite alternate;
+        }
+
+        @keyframes fotoAnimasi {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        .nama {
+            margin-top: 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .umur {
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        .pesan {
+            margin-top: 25px;
+            line-height: 1.8;
+            font-size: 17px;
+            display: none;
+            animation: pesanMuncul 1s ease;
+        }
+
+        @keyframes pesanMuncul {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        button.pesan-button {
+            margin-top: 25px;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 30px;
+            background: white;
+            color: #e91e63;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+            transition: 0.3s;
+        }
+
+        button.pesan-button:hover {
+            transform: scale(1.08);
+            background: #ffe0eb;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .heart {
+            position: fixed;
+            top: -20px;
+            color: #ffb6d9;
+            font-size: 20px;
+            animation: jatuh linear forwards;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        @keyframes jatuh {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 18px;
+            }
+
+            .judul {
+                font-size: 29px;
+            }
+
+            .subjudul {
+                font-size: 17px;
+            }
+
+            .foto {
+                width: 180px;
+                height: 180px;
+            }
+
+            .nama {
+                font-size: 27px;
+            }
+
+            .pesan {
+                font-size: 15px;
+            }
+
+            .opening-box h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MUSIK -->
+    <audio id="musik" loop preload="auto">
+        <source src="heaven.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung audio.
+    </audio>
+
+    <!-- HALAMAN PEMBUKA -->
+    <div id="opening">
+        <div class="opening-box">
+            <h1>❤️ Ada sesuatu untukmu ❤️</h1>
+
+            <p>
+                Sebelum melihat pesan ini,<br>
+                klik tombol di bawah dulu yaa 🥰
+            </p>
+
+            <button id="enterButton">
+                💕 Klik untuk Masuk 💕
+            </button>
+        </div>
+    </div>
+
+    <!-- ISI WEBSITE -->
+    <div class="container">
+
+        <div class="judul">
+            🎂 Happy Birthday Jenong 🎂
+        </div>
+
+        <div class="subjudul">
+            Untuk MBG (my bianca gweh) ❤️
+        </div>
+
+        <img src="bianca1.jpg" class="foto" alt="Foto Bianca">
+
+        <div class="nama">
+            Bianca Esarraya ❤️
+        </div>
+
+        <div class="umur">
+            Selamat bertambah usia 🥳
+        </div>
+
+        <button class="pesan-button" onclick="bukaPesan()">
+            💌 Buka Pesanku
+        </button>
+
+        <div class="pesan" id="pesan">
+
+            <p>
+                Selamat ulang tahun, sayangku ❤️
+            </p>
+
+            <br>
+
+            <p>
+                Hari ini adalah hari yang spesial,
+                karena seseorang yang sangat berarti
+                dalam hidupku bertambah usia, dah 18 yeayy udah dewasa
+                acaa aku jangan nakal ya acaaa.
+            </p>
+
+            <br>
+
+            <p>
+                Aku berharap di usia kamu yang baru ini,
+                semua hal baik datang menghampirimu.
+                Semoga kamu selalu diberikan kesehatan,
+                kebahagiaan, kesuksesan, dan kekuatan
+                untuk menghadapi semua hal dalam hidup.
+            </p>
+
+            <br>
+
+            <p>
+                Terima kasih karena sudah menjadi bagian
+                dari hidupku. Terima kasih untuk semua
+                cerita, tawa, perhatian, dan waktu yang
+                sudah kita lewati bersama.
+            </p>
+
+            <br>
+
+            <p>
+                Aku mungkin bukan orang yang sempurna,
+                tapi aku akan selalu berusaha menjadi
+                seseorang yang bisa membuat kamu merasa
+                dicintai dan dihargai. ❤️
+            </p>
+
+            <br>
+
+            <p>
+                Semoga hubungan kita bisa terus berjalan,
+                melewati banyak cerita, banyak perjalanan,
+                dan semakin banyak kenangan indah
+                yang kita buat bersama.
+            </p>
+
+            <br>
+
+            <p>
+                Sekali lagi...
+            </p>
+
+            <br>
+
+            <h2>
+                🎉 SELAMAT ULANG TAHUN, SAYANG! 🎉
+            </h2>
+
+            <br>
+
+            <p>
+                I Love You ❤️
+            </p>
+
+        </div>
+
+        <div class="footer">
+            Dibuat dengan ❤️ khusus untukmu
+        </div>
+
+    </div>
+
+    <script>
+        const musik = document.getElementById("musik");
+        const opening = document.getElementById("opening");
+        const enterButton = document.getElementById("enterButton");
+
+        // Musik dimulai setelah tombol diklik.
+        // Ini sengaja menggunakan klik karena browser biasanya
+        // memblokir autoplay audio bersuara tanpa interaksi pengguna.
+        enterButton.addEventListener("click", function () {
+
+            musik.volume = 0.7;
+
+            musik.play().then(function () {
+                console.log("Musik berhasil diputar.");
+            }).catch(function (error) {
+                console.log("Musik gagal diputar:", error);
+            });
+
+            opening.style.opacity = "0";
+            opening.style.transition = "opacity 0.8s ease";
+
+            setTimeout(function () {
+                opening.style.display = "none";
+            }, 800);
+        });
+
+        function bukaPesan() {
+
+            const pesan = document.getElementById("pesan");
+
+            pesan.style.display = "block";
+
+            setTimeout(function () {
+                pesan.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 200);
+        }
+
+        // Membuat hati jatuh
+        function buatHati() {
+
+            const heart = document.createElement("div");
+
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.fontSize =
+                (Math.random() * 20 + 10) + "px";
+
+            heart.style.animationDuration =
+                (Math.random() * 4 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(buatHati, 400);
+    </script>
+
+</body>
+</html>
